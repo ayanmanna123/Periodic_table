@@ -15,12 +15,14 @@ const getCategoryColor = (category) => {
 const ElementTile = ({ element, onClick }) => {
   return (
     <div
-      className={`text-center p-2 border rounded cursor-pointer hover:scale-105 transition ${getCategoryColor(element.category)}`}
+      className={`text-center  border rounded cursor-pointer hover:scale-105 transition ${getCategoryColor(element.category)}`}
       style={{ gridColumnStart: element.xpos, gridRowStart: element.ypos }}
       onClick={onClick}
     >
       <div className="font-bold text-sm">{element.symbol}</div>
+      <div className="text-xs">{element.number}</div>
       <div className="text-xs">{element.name}</div>
+      
       <div className="text-xs">{element.atomic_mass.toFixed(3)}</div>
     </div>
   );
